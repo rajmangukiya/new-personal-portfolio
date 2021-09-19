@@ -1,27 +1,33 @@
 import React from 'react'
-import { Container, Nav, Navbar, NavDropdown, Col, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
-function Header() {
+const Header = () => {
+
+    console.log(window.location.pathname === '/');
+
+
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" sticky="top" className="header-nav">
-                <Container style={{ height: '60px' }}>
-                    <Navbar.Brand href="#main">Protfolio</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav>
-                            <Nav.Link href="#work">Work</Nav.Link>
-                            <Nav.Link eventKey={2} href="#about">
-                                About
-                            </Nav.Link>
-                            <Nav.Link href="#contact" eventKey={3}>
-                                Contact
-                            </Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+        <div className="w-100" style={{ height: '55px' }}></div>
+        <Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+            <Container>
+                <Navbar.Toggle aria-controls="bg-light basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="m-auto">
+                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/' ? 'text-primary' : 'text-light'
+                            }`} href="/">Home</Nav.Link>
+                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/portfolio' ? 'text-primary' : 'text-light'
+                            }`} href="/portfolio">Portfolio</Nav.Link>
+                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/blog' ? 'text-primary' : 'text-light'
+                            }`} href="/blog">Blog</Nav.Link>
+                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/about' ? 'text-primary' : 'text-light'
+                            }`} href="/about">About</Nav.Link>
+                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/contact' ? 'text-primary' : 'text-light'
+                            }`} href="/contact">Conatct</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
         </>
     )
 }

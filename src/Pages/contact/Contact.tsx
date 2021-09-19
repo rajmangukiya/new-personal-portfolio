@@ -1,121 +1,28 @@
-import React, { useEffect, useState } from "react";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import UpworkIcon from "../../Components/UpworkIcon";
-import EmailIcon from "@material-ui/icons/Email";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import { Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React from 'react'
 
 const Contact = () => {
-
-  const [size, setSize] = useState(100);
-  const height = window.innerWidth;
-
-  const handleIcons = () => {
-    console.log(height);
-
-    if (height <= 1200 && height > 992) {
-      setSize(80);
-    }
-    else if (height <= 992 && height > 768) {
-      setSize(60);
-    }
-    else if (height <= 768 && height > 600) {
-      setSize(50);
-    }
-    else if (height <= 600 && height > 400) {
-      setSize(40);
-    }
-    else if (height <= 400 && height > 0) {
-      setSize(30);
-    }
-  }
-
-
-  const iconStyle = {
-    fontSize: `${size}px`,
-    margin: "10px",
-    cursor: "pointer",
-  };
-
-  const toMail = () => {
-    window.location.href =
-      "mailto:rajmangukiya00@gmail.com?subject=business inquiry&body=Hello!";
-    window.setTimeout(function () {
-      window.location.href = "/#contact";
-    }, 0);
-  };
-
-  useEffect(() => {
-    handleIcons();
-  }, [height])
-
   return (
-    <div id="contact" className="contact">
-      <Row>
-        <Col md={12}>
-          <h1 className="contact-title">Get in touch</h1>
-        </Col>
-      </Row>
-
-      <p className="contact-info">
-        Surat, Gujarat, India.
-        <br />
-        rajmangukiya00@gmail.com,
-        <br />+91 9023460463,<br />
-        skype -  live:.cid.427e58067e903920.
-      </p>
-
-      <div className="icons">
-        <Row className="contact-row">
-          <Col md={2} className="icon-col">
-            <a href={'https://github.com/rajmangukiya'} target="_blank" >
-              <GitHubIcon style={iconStyle} />
-            </a>
-          </Col>
-
-          <Col md={2} className="icon-col">
-            <a href={'https://www.linkedin.com/in/raj-mangukiya-6335431b4/'} target="_blank" >
-              <LinkedInIcon style={iconStyle} />
-            </a>
-          </Col>
-
-          <Col md={2} className="icon-col">
-            <a href="#contact">
-              <EmailIcon onClick={toMail} style={iconStyle} />
-            </a>
-          </Col>
-
-          <Col md={2} className="icon-col">
-            <a href="https://www.facebook.com/raj.mangukiya.967" target="_blank">
-              <FacebookIcon style={iconStyle} />
-            </a>
-          </Col>
-
-          <Col md={2} className="icon-col">
-            <a href="https://www.instagram.com/raj__mangukiya/" target="_blank">
-              <InstagramIcon style={iconStyle} />
-            </a>
-          </Col>
-
-          <Col
-            md={2}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <a href="" target="_blank">
-              <UpworkIcon />
-            </a>
-          </Col>
-        </Row>
+    <div className="min-vh-100">
+      <div className="container d-flex flex-column justify-content-center align-items-center">
+        <h1 className="text-center pt-5">Want to work with me?</h1>
+        <h1 className="text-center">Let's have a talk</h1>
+        <div className="bg-primary mt-5 p-5 text-white text-center rounded-circle">
+          <p>raj mangukiya</p>
+          <p>+91 9023460453S</p>
+          <p>rajmangukiya00@gmail.com</p>
+          <p>surat, gujarat, india</p>
+        </div>
+        <form className="contact-form d-flex flex-column m-5 align-items-center" action="#">
+          <input className="mt-4 rounded-pill px-3 py-1 w-100" placeholder="full name" type="text" />
+          <input className="mt-4 rounded-pill px-3 py-1 w-100" placeholder="email" type="text" />
+          <textarea className="mt-4 px-3 py-3 w-100" placeholder="your requirment or query" style={{borderRadius: '20px'}} />
+          <div className="bg-primary px-5 py-2 text-light m-4 rounded-pill" style={{cursor: 'pointer'}}>
+            Submit
+          </div>
+        </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

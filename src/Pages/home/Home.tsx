@@ -1,28 +1,21 @@
 import React from 'react'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import WaveBackground from './WaveBackground';
-import ParticlesBg from 'particles-bg'
+import { Container } from 'react-bootstrap'
 
 const Home = () => {
-
   return (
-    <div className="home">
-      <div className="home-heading">
-        <h1>
-          <span>Hi, I'm Raj.<br /></span>
-          <span>Full-stack web developer<br /></span>
-          {/* <span><br /></span>
-          <span>your business</span> */}
-        </h1>
+    <div className="bg-light">
+      <div className="container p-5 min-vh-100 d-flex flex-column flex-sm-row justify-content-center align-items-center">
+        <div className="m-5">
+          <img className="rounded-circle" src="https://randomuser.me/api/portraits/men/15.jpg" alt="" />
+        </div>
+        <div>
+          <p className="display-6 text-uppercase fw-bold font-monospace mb-5">
+            Hi, I'm Raj<br />
+            Full stack web developer
+          </p>
+          <a href="#" className="btn-lg bg-primary text-light w-lg-100">Hire me</a>
+        </div>
       </div>
-      <a className="down-arrow" href="#work">
-        <ArrowDownwardIcon style={{
-          fontSize: '70px',
-          color: 'rgba(255, 255, 255, 0.8)'
-        }} />
-      </a>
-      {/* <WaveBackground /> */}
-      <ParticlesBg color="#00bbff" num={50} type="cobweb" bg={false} />
     </div>
   )
 }
