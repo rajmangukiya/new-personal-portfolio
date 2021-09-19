@@ -23,7 +23,7 @@ const Header = () => {
                         <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/about' ? 'text-primary' : 'text-light'
                             }`} href="/about">About</Nav.Link>
                         <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/contact' ? 'text-primary' : 'text-light'
-                            }`} href="/contact">Conatct</Nav.Link>
+                            }`} href="/contact">Contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
