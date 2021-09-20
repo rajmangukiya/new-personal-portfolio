@@ -12,14 +12,14 @@ import Project from './portfolio/Project'
 const Index: React.FC = () => {
     return (
             <Switch>
-                <Route exact path="/new-personal-portfolio" component={Home}/>
-                <Route exact path="/new-personal-portfolio/about" component={About}/>
-                <Route exact path="/new-personal-portfolio/portfolio" component={Portfolio}/>
-                <Route exact path="/new-personal-portfolio/portfolio/:id" component={OpenProject}/>
-                <Route exact path="/new-personal-portfolio/blog" component={Blog}/>
-                <Route exact path="/new-personal-portfolio/contact" component={Contact}/>
-                <Route path="/new-personal-portfolio/error" component={Error} /> 
-                <Redirect from="**" to="/new-personal-portfolio/error" />
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/about" component={About}/>
+                <Route exact path="/portfolio" component={Portfolio}/>
+                <Route exact path="/portfolio/:id" component={OpenProject}/>
+                <Route exact path="/blog" component={Blog}/>
+                <Route exact path="/contact" component={Contact}/>
+                <Route path="/error" component={Error} /> 
+                <Redirect from="**" to="/error" />
             </Switch>
     )
 }
