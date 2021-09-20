@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
 
-    console.log(window.location.pathname === '/');
+    console.log(window.location.hash);
 
 
     return (
@@ -15,15 +15,15 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="bg-light basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto">
-                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/' ? 'text-primary' : 'text-light'
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.hash === '#/' ? 'text-primary' : 'text-light'
                             }`} to="/">Home</Link>
-                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/portfolio' ? 'text-primary' : 'text-light'
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.hash === '#/portfolio' ? 'text-primary' : 'text-light'
                             }`} to="/portfolio">Portfolio</Link>
-                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/blog' ? 'text-primary' : 'text-light'
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.hash === '#/blog' ? 'text-primary' : 'text-light'
                             }`} to="/blog">Blog</Link>
-                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/about' ? 'text-primary' : 'text-light'
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.hash === '#/about' ? 'text-primary' : 'text-light'
                             }`} to="/about">About</Link>
-                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/contact' ? 'text-primary' : 'text-light'
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.hash === '#/contact' ? 'text-primary' : 'text-light'
                             }`} to="/contact">Contact</Link>
                     </Nav>
                 </Navbar.Collapse>
