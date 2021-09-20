@@ -6,7 +6,7 @@ import Routes from './Routes/Routes';
 
 const App: React.FC = () => {
   return (
-    <Router basename="/#">
+    <Router>
       <Routes/>
     </Router>
   );

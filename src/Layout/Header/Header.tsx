@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -14,16 +15,16 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="bg-light basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto">
-                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/' ? 'text-primary' : 'text-light'
-                            }`} href="/">Home</Nav.Link>
-                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/portfolio' ? 'text-primary' : 'text-light'
-                            }`} href="/#portfolio">Portfolio</Nav.Link>
-                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/blog' ? 'text-primary' : 'text-light'
-                            }`} href="/#blog">Blog</Nav.Link>
-                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/about' ? 'text-primary' : 'text-light'
-                            }`} href="/#about">About</Nav.Link>
-                        <Nav.Link className={`fs-6 mx-5 ${window.location.pathname === '/contact' ? 'text-primary' : 'text-light'
-                            }`} href="/#contact">Contact</Nav.Link>
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/' ? 'text-primary' : 'text-light'
+                            }`} to="/">Home</Link>
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/portfolio' ? 'text-primary' : 'text-light'
+                            }`} to="/portfolio">Portfolio</Link>
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/blog' ? 'text-primary' : 'text-light'
+                            }`} to="/blog">Blog</Link>
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/about' ? 'text-primary' : 'text-light'
+                            }`} to="/about">About</Link>
+                        <Link className={`fs-6 mx-5 py-2 ${window.location.pathname === '/contact' ? 'text-primary' : 'text-light'
+                            }`} to="/contact">Contact</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
